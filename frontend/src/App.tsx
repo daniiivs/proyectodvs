@@ -1,11 +1,17 @@
-import Login from "./pages/Login.tsx"
+import Login from "./pages/Login.tsx";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { themeOptions } from "./main.tsx";
 
 function App() {
+  const theme = createTheme(themeOptions);
+
   return (
     <>
-      <Login />
+      <ThemeProvider theme={theme}>
+        <Login />
+      </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
